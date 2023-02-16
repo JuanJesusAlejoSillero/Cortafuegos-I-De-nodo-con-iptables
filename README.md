@@ -3,7 +3,6 @@
 **Tabla de contenidos:**
 
 - [**Práctica Informática Forense - SAD**](#práctica-informática-forense---sad)
-  - [**Disclaimer**](#disclaimer)
   - [**Realización**](#realización)
     - [**Creación del escenario en OpenStack**](#creación-del-escenario-en-openstack)
     - [**Limpieza de las reglas previas**](#limpieza-de-las-reglas-previas)
@@ -24,10 +23,6 @@
     - [**Ejercicio 4**](#ejercicio-4)
     - [**Ejercicio 5**](#ejercicio-5)
     - [**Ejercicio 6**](#ejercicio-6)
-
-## **Disclaimer**
-
-Este archivo ha sido generado a partir de mis propios apuntes en markdown y puede que el color de letra con el que se muestre sea diferente o, que existan cortes en los bloques de código entre páginas. Estos errores no existen en el documento original. Si desea consultar el documento original en markdown estaré encantado de adjuntarlo.
 
 ---
 
