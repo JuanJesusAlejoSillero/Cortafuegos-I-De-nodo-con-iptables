@@ -392,18 +392,24 @@ iptables -L -n -v --line-numbers
 
 ![18](img/18.png)
 
-Sabiendo que la posición es la 5, procedo a crear en esa posición la regla que bloquea el acceso a la IP *37.187.119.60*
+Sabiendo que la posición es la 5, procedo a crear en esa posición otra regla que bloquee el acceso a la IP *37.187.119.60* tanto por el puerto 80 (*http*) como por el 443 (*https*):
 
 ```bash
-iptables -I OUTPUT 5 -d 37.187.119.60 -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j DROP
+iptables -I OUTPUT 5 -d 37.187.119.60 -p tcp -m multiport --dports 80,443 -m state --state NEW,ESTABLISHED -j DROP
 ```
 
-Si ahora intento acceder a *www.josedomingo.org* veré que no funciona. Tampoco podré acceder a *fp.josedomingo.org* ya que esta web está alojada en el mismo servidor que *www.josedomingo.org* por lo que comparten IP:
+![18-1](img/18-1.png)
+
+Si ahora intento acceder a *www.josedomingo.org* veré que no funciona. Tampoco podré acceder a *fp.josedomingo.org* ya que ambas webs están alojadas en el mismo servidor, por lo que comparten IP:
 
 ```bash
 curl www.josedomingo.org
 
 curl fp.josedomingo.org
+
+curl https://www.josedomingo.org
+
+curl https://fp.josedomingo.org
 
 dig www.josedomingo.org +short
 
