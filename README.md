@@ -62,7 +62,7 @@ iptables -t nat -Z
 
 ### **Permitir SSH**
 
-Cómo estamos conectado a la máquina por *ssh*, vamos a permitir la conexión *ssh* desde las redes *172.22.0.0/16* (la del instituto) y *172.29.0.0/16* (la de VPN), antes de cambiar las políticas por defecto a *DROP*, para no perder la conexión:
+Cómo estamos conectados a la máquina por *ssh*, vamos a permitir la conexión *ssh* desde las redes *172.22.0.0/16* (la del instituto) y *172.29.0.0/16* (la de VPN), antes de cambiar las políticas por defecto a *DROP*, para no perder la conexión:
 
 ```bash
 iptables -A INPUT -s 172.22.0.0/16 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
